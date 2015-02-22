@@ -1,0 +1,10 @@
+<?php
+define('ECK_NOT_PUBLISHED_VALUE',0);
+define('ECK_PUBLISHED_VALUE',1);
+define('ECK_PUBLISHED_DEFAULT_VALUE',ECK_PUBLISHED_VALUE);
+
+function eck_behavior_published_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'eck' && $plugin_type == 'property_behavior') {
+    return 'plugins/' . $plugin_type;
+  }
+}
