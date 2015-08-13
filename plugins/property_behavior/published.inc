@@ -40,8 +40,8 @@ function eck_behavior_published_property_entity_view($property, $vars) {
   if ($entity->{$property} == ECK_NOT_PUBLISHED_VALUE) {
     if(isset($entity->title)) {
       $entity->title .= ' (Unpublished)';
+      drupal_set_title($entity->title);
     }
-    drupal_set_title($entity->title);
     if (!user_access('eck administer ' . $entity->entityType() . ' ' . $entity->bundle() . ' entities')) {
       drupal_access_denied();
       drupal_exit();
