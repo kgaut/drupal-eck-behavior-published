@@ -1,4 +1,0 @@
-name = ECK Behavior Published
-description = Ajout d'un comportement "Publié" à utiliser pour les entitée créée avec ECK
-dependencies[] = eck
-core = 7.x
