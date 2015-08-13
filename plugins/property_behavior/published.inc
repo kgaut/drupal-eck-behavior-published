@@ -38,6 +38,9 @@ function eck_behavior_published_property_default_widget($property, $vars) {
 function eck_behavior_published_property_entity_view($property, $vars) {
   $entity = $vars['entity'];
   if ($entity->{$property} == ECK_NOT_PUBLISHED_VALUE) {
+    if(isset($entity->title)) {
+      $entity->title .= ' (Unpublished)';
+    }
     drupal_set_title($entity->title);
     if (!user_access('eck administer ' . $entity->entityType() . ' ' . $entity->bundle() . ' entities')) {
       drupal_access_denied();
